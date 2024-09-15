@@ -23,7 +23,7 @@ export default function Component() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100 text-gray-900">
+    <div className="flex flex-col h-screen bg-white text-gray-900">
       {/* App Header */}
       <header className="flex justify-between items-center px-4 py-2 bg-white border-b border-gray-200">
         <div className="flex items-center space-x-2">
@@ -119,7 +119,7 @@ export default function Component() {
 
         {/* Control Button */}
         <button
-          className="w-full bg-indigo-600 text-white py-3 rounded-full text-lg "
+          className="w-full bg-purple-900 text-white py-3 rounded-full text-lg "
           onClick={handleClick}
         >
           Kontroll
