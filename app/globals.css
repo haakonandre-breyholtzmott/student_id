@@ -25,3 +25,21 @@ body {
     text-wrap: balance;
   }
 }
+
+.animate-control {
+  animation: controlPulse 1s infinite;
+}
+
+@keyframes controlPulse {
+  0%,
+  100% {
+    background-color: #baf8e3;
+    border-color: #2c6552;
+    color: #000000;
+  }
+  50% {
+    background-color: #2c6552;
+    border-color: #2c6552;
+    color: #ffffff;
+  }
+}
