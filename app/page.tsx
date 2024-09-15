@@ -36,7 +36,7 @@ export default function Component() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto p-4 space-y-4">
+      <main className="flex-1 overflow-y-auto p-4 space-y-6">
         {/* Profile Section */}
         <div className="flex flex-col items-center">
           <Image
