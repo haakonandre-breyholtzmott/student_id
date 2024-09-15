@@ -17,7 +17,7 @@ import { MdLogout } from "react-icons/md";
 
 //Images
 import bibliotekkort from "@/public/bibliotekkort.png";
-import logo from "@/public/siktlogo.png";
+import logo from "@/public/Siktlogo.png";
 
 //Functions
 function getFormattedDate() {
