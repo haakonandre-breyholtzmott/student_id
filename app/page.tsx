@@ -1,9 +1,22 @@
 "use client";
+import React, { useState } from "react";
 
-import { MoreVertical } from "lucide-react";
+//Next.js
 import Image from "next/image";
-import { useState } from "react";
 
+//Shadcn
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+//Icons
+import { MoreVertical, ScanBarcode, BookOpen } from "lucide-react";
+import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
+import { MdLogout } from "react-icons/md";
+
+//Functions
 function getFormattedDate() {
   const now = new Date();
   const day = String(now.getDate()).padStart(2, "0");
@@ -31,18 +44,38 @@ export default function Component() {
   return (
     <div className="flex flex-col h-screen bg-white text-gray-900">
       {/* App Header */}
-      <header className="flex justify-between items-center px-4 pb-2 pt-6 bg-[#EBE6FD] border-b-2 border-[#7251FA]">
+      <header className="flex justify-between items-center px-6 pb-2 pt-6 bg-[#EBE6FD] border-b-2 border-[#7251FA]">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-indigo-900 rounded-full flex items-center justify-center">
             <div className="w-4 h-4 bg-white rounded-full"></div>
           </div>
           <span className="text-2xl font-bold">Sikt</span>
         </div>
-        <div className="flex flex-col items-center space-y-1">
-          <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
-          <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
-          <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
-        </div>
+        <Popover>
+          <PopoverTrigger>
+            <div className="flex flex-col items-center space-y-1">
+              <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
+              <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
+              <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
+            </div>
+          </PopoverTrigger>
+          <PopoverContent className="border-[#7251FA] border-2 mt-1 mr-4 max-w-44 rounded-xl px-4 py-3">
+            <ul>
+              <li className="border-b border-gray-300 p-2 flex items-center justify-between">
+                Bibliotekkort <PiBarcode size={20} />
+              </li>
+              <li className="border-b border-gray-300 p-2 flex items-center justify-between">
+                Vilkår <PiBookOpenThin size={20} />
+              </li>
+              <li className="border-b border-gray-300 p-2 flex items-center justify-between">
+                Personvern <PiLockLaminated size={20} />
+              </li>
+              <li className="border-b border-gray-300 p-2 flex items-center justify-between text-red-500">
+                Logg ut <MdLogout size={20} />
+              </li>
+            </ul>
+          </PopoverContent>
+        </Popover>
       </header>
 
       {/* Main Content */}
