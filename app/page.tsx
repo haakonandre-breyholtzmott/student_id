@@ -49,7 +49,7 @@ export default function Component() {
         </div>
 
         {/* Personal Info */}
-        <div className="bg-indigo-100 rounded-xl p-4 space-y-2 border-2 border-indigo-600">
+        <div className="bg-indigo-200 rounded-xl p-4 space-y-2 border-2 border-indigo-800">
           <h2 className="text-lg">Haakon-Andre Breyholtz-Mott (20)</h2>
           <div className="flex items-center space-x-2">
             <svg
