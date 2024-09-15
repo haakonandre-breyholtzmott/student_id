@@ -113,7 +113,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Bibliotekkort <PiBarcode size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[320px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[382px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <Image src={bibliotekkort} alt="Barcode" width={480} />
                     <p className="text-sm w-full text-center">
                       <span className="font-semibold">Studiested: </span>
@@ -131,7 +131,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Vilkår <PiBookOpenThin size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[calc(100vw - 32px)] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[382px] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <span className="text-xl">Vilkår</span>
                     <p className="text-sm w-full">
                       Appen vil vise informasjon om navn, studiested og om du
