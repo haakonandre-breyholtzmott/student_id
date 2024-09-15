@@ -23,7 +23,14 @@ import {
 } from "@/components/ui/alert-dialog";
 
 //Icons
-import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
+import {
+  PiLockLaminated,
+  PiBookOpenThin,
+  PiBarcode,
+  PiIdentificationCardLight,
+  PiStudentLight,
+} from "react-icons/pi";
+import { CiCalendar } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 
@@ -202,49 +209,20 @@ export default function Component() {
             <div className="bg-[#EBE6FD] rounded-xl p-4 space-y-2 border-2 border-[#7251FA] w-full">
               <h2 className="text-lg">Haakon-Andre Breyholtz-Mott (20)</h2>
               <div className="flex items-center space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <CiCalendar size={20} />
                 <p className="text-sm">
                   <span className="font-semibold">Fødselsdato: </span>
                   05.07.2004
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <PiIdentificationCardLight size={20} />
                 <p className="text-sm">
                   <span className="font-semibold">Studentnummer: </span>586527
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                </svg>
+                <PiStudentLight size={20} />
                 <p className="text-sm">
                   <span className="font-semibold">Studiested: </span>Høgskulen
                   på Vestlandet
