@@ -12,9 +12,12 @@ import {
 } from "@/components/ui/popover";
 
 //Icons
-
 import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
 import { MdLogout } from "react-icons/md";
+
+//Images
+import bibliotekkort from "@/public/bibliotekkort.png";
+import logo from "@/public/SiktLogo.png";
 
 //Functions
 function getFormattedDate() {
@@ -44,12 +47,9 @@ export default function Component() {
   return (
     <div className="flex flex-col h-screen bg-white text-gray-900">
       {/* App Header */}
-      <header className="flex justify-between items-center px-6 pb-2 pt-6 bg-[#EBE6FD] border-b-2 border-[#7251FA]">
+      <header className="flex justify-between items-center px-6 pb-4 pt-6 bg-[#EBE6FD] border-b-2 border-[#7251FA]">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-indigo-900 rounded-full flex items-center justify-center">
-            <div className="w-4 h-4 bg-white rounded-full"></div>
-          </div>
-          <span className="text-2xl font-bold">Sikt</span>
+          <Image src={logo} alt="Barcode" width={90} />
         </div>
         <Popover>
           <PopoverTrigger>
@@ -66,7 +66,17 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Bibliotekkort <PiBarcode size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[480px]">ddd</PopoverContent>
+                  <PopoverContent className="w-[320px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
+                    <Image src={bibliotekkort} alt="Barcode" width={480} />
+                    <p className="text-sm w-full text-center">
+                      <span className="font-semibold">Studiested: </span>
+                      Høgskulen på Vestlandet
+                    </p>
+
+                    <button className="w-full bg-[#7251FA] text-white py-3 rounded-full text-lg transition-opacity duration-300">
+                      Lukk
+                    </button>
+                  </PopoverContent>
                 </Popover>
               </li>
               <li className="border-b border-gray-300 p-2 flex items-center justify-between">
