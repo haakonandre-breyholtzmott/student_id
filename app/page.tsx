@@ -10,6 +10,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 //Icons
 import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
@@ -45,12 +56,12 @@ export default function Component() {
   };
 
   const openFullscreen = () => {
-    const elem = document.documentElement as any;
+    const elem = document.documentElement as HTMLElement;
 
     const requestFullscreen =
       elem.requestFullscreen ||
-      elem.webkitRequestFullscreen ||
-      elem.msRequestFullscreen;
+      (elem as any).webkitRequestFullscreen ||
+      (elem as any).msRequestFullscreen;
 
     if (requestFullscreen) {
       requestFullscreen.call(elem).catch((err: Error) => {
@@ -68,7 +79,24 @@ export default function Component() {
       {/* App Header */}
       <header className="flex justify-between items-center px-6 pb-4 pt-6 bg-[#EBE6FD] border-b-2 border-[#7251FA]">
         <div className="flex items-center space-x-2">
-          <Image src={logo} alt="Barcode" width={90} />
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Image src={logo} alt="Barcode" width={90} />
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction>Continue</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
         <Popover>
           <PopoverTrigger>
