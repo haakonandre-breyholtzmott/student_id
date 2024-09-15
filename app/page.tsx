@@ -49,7 +49,7 @@ export default function Component() {
         </div>
 
         {/* Personal Info */}
-        <div className="bg-indigo-200 rounded-xl p-4 space-y-2 border-2 border-indigo-800">
+        <div className="bg-[#EBE6FD] rounded-xl p-4 space-y-2 border-2 border-[#7251FA]">
           <h2 className="text-lg">Haakon-Andre Breyholtz-Mott (20)</h2>
           <div className="flex items-center space-x-2">
             <svg
@@ -106,8 +106,8 @@ export default function Component() {
         <div
           className={`rounded-xl p-4 text-center border-2 transition-colors duration-500 ${
             isActive
-              ? "bg-green-300 border-green-900"
-              : "bg-green-100 border-green-800"
+              ? "bg-[#BAF8E3] border-[#2C6552]"
+              : "bg-[#2C6552] border-[#2C6552]"
           }`}
         >
           <h3 className="text-xl mb-2">Gyldig studentbevis</h3>
@@ -119,7 +119,7 @@ export default function Component() {
 
         {/* Control Button */}
         <button
-          className="w-full bg-purple-800 text-white py-3 rounded-full text-lg "
+          className="w-full bg-[#7251FA] text-white py-3 rounded-full text-lg "
           onClick={handleClick}
         >
           Kontroll
