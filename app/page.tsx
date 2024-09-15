@@ -106,8 +106,8 @@ export default function Component() {
         <div
           className={`rounded-xl p-4 text-center border-2 transition-colors duration-500 ${
             isActive
-              ? "bg-[#BAF8E3] border-[#2C6552]"
-              : "bg-[#2C6552] border-[#2C6552]"
+              ? "bg-[#2C6552] border-[#2C6552]"
+              : "bg-[#BAF8E3] border-[#2C6552]"
           }`}
         >
           <h3 className="text-xl mb-2">Gyldig studentbevis</h3>
