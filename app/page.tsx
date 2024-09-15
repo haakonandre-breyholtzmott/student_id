@@ -25,7 +25,7 @@ export default function Component() {
   return (
     <div className="flex flex-col h-screen bg-white text-gray-900">
       {/* App Header */}
-      <header className="flex justify-between items-center px-4 py-2 bg-white border-b border-gray-200">
+      <header className="flex justify-between items-center px-4 py-2 bg-[#EBE6FD] border-b border-[#7251FA]">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-indigo-900 rounded-full flex items-center justify-center">
             <div className="w-4 h-4 bg-white rounded-full"></div>
