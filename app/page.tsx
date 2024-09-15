@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 //Next.js
 import Image from "next/image";
@@ -24,11 +24,13 @@ import {
 
 //Icons
 import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 
 //Images
 import bibliotekkort from "@/public/bibliotekkort.png";
 import logo from "@/public/Siktlogo.png";
+import profile from "@/public/profile.png";
 
 //Functions
 function getFormattedDate() {
@@ -54,25 +56,6 @@ export default function Component() {
       setButtonOpacity(1); // Restore button opacity after 4 seconds
     }, 4000);
   };
-
-  const openFullscreen = () => {
-    const elem = document.documentElement as HTMLElement;
-
-    const requestFullscreen =
-      elem.requestFullscreen ||
-      (elem as any).webkitRequestFullscreen ||
-      (elem as any).msRequestFullscreen;
-
-    if (requestFullscreen) {
-      requestFullscreen.call(elem).catch((err: Error) => {
-        console.error("Error attempting to enable fullscreen:", err);
-      });
-    }
-  };
-
-  useEffect(() => {
-    openFullscreen();
-  }, []);
 
   return (
     <div className="flex flex-col h-screen bg-white text-gray-900">
@@ -113,7 +96,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Bibliotekkort <PiBarcode size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[382px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[320px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <Image src={bibliotekkort} alt="Barcode" width={480} />
                     <p className="text-sm w-full text-center">
                       <span className="font-semibold">Studiested: </span>
@@ -131,7 +114,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Vilkår <PiBookOpenThin size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[382px] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[382p] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <span className="text-xl">Vilkår</span>
                     <p className="text-sm w-full">
                       Appen vil vise informasjon om navn, studiested og om du
@@ -188,13 +171,31 @@ export default function Component() {
           <div className="w-full flex flex-col  space-y-5 items-center">
             {/* Profile Section */}
             <div className="flex flex-col items-center ">
-              <Image
-                src="https://github.com/shadcn.png"
-                alt="Profile picture"
-                width={80}
-                height={80}
-                className="rounded-full"
-              />
+              <AlertDialog>
+                <AlertDialogTrigger>
+                  <Image
+                    src={profile}
+                    alt="Haakon-Andre Breyholtz-Mott"
+                    width={80}
+                    height={80}
+                    className="rounded-full"
+                  />
+                </AlertDialogTrigger>
+                <AlertDialogContent className=" border-none w-[90vw]">
+                  <div className="flex items-center justify-center relative">
+                    <Image
+                      src={profile}
+                      alt="Haakon-Andre Breyholtz-Mott"
+                      width={300}
+                      height={300}
+                      className=""
+                    />
+                    <AlertDialogCancel className="absolute -top-4 right-6 border-none bg-transparent hover:bg-transparent">
+                      <IoIosCloseCircleOutline size={30} className="mb-14" />
+                    </AlertDialogCancel>
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
 
             {/* Personal Info */}
