@@ -47,12 +47,15 @@ export default function Component() {
   const openFullscreen = () => {
     const elem = document.documentElement as any;
 
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen();
+    const requestFullscreen =
+      elem.requestFullscreen ||
+      elem.webkitRequestFullscreen ||
+      elem.msRequestFullscreen;
+
+    if (requestFullscreen) {
+      requestFullscreen.call(elem).catch((err: Error) => {
+        console.error("Error attempting to enable fullscreen:", err);
+      });
     }
   };
 
@@ -100,7 +103,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Vilkår <PiBookOpenThin size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[100vw] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[calc(100vw - 32px)] mx-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <span className="text-xl">Vilkår</span>
                     <p className="text-sm w-full">
                       Appen vil vise informasjon om navn, studiested og om du
