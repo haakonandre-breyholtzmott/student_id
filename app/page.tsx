@@ -53,7 +53,7 @@ export default function Component() {
         </div>
         <Popover>
           <PopoverTrigger>
-            <div className="flex flex-col items-center space-y-1">
+            <div className="flex flex-col items-center space-y-1 px-4">
               <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
               <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
               <div className="border h-1 w-1 rounded-full border-[#7251FA]"></div>
@@ -80,11 +80,53 @@ export default function Component() {
                 </Popover>
               </li>
               <li className="border-b border-gray-300 p-2 flex items-center justify-between">
-                Vilkår <PiBookOpenThin size={20} />
+                <Popover>
+                  <PopoverTrigger className=" flex items-center justify-between w-full">
+                    Vilkår <PiBookOpenThin size={20} />
+                  </PopoverTrigger>
+                  <PopoverContent className="w-[320px] mr-4 -mt-24 rounded-xl border-[#7251FA] border-2 space-y-4">
+                    <span className="text-xl">Vilkår</span>
+                    <p className="text-sm w-full">
+                      Appen vil vise informasjon om navn, studiested og om du
+                      har betalt semesteravgift og semesterregistrert deg. Appen
+                      vil også vise bilde av deg, som institusjonen har tatt til
+                      bruk for studentkort. Appen fungerer som studentbevis
+                      blant annet hos studentsamskipnader og
+                      kollevktivtransportselskper i Norge. Hvis appen ikke viser
+                      bilde av deg, må du ta med gyldig legitimasjon med bilde.
+                      <br />
+                      <br />
+                      Ved førstegangsbruk må appen være koblet til internett for
+                      å kunne laste ned informasjon. Informasjonen blir lagret
+                      lokalt på telefonen og du trenger ikke være online for å
+                      bruke appen.
+                      <br />
+                      <br />
+                      Skulle telefonnen gå tom for strøm eller av andre grunner
+                      ikke fungere, må du bevise studentstatus med
+                      semesterkvittering og gyldig legitimasjon.
+                      <br />
+                      <br />
+                      Institusjonen tar ikke ansvar for bøter, misbruk og
+                      lignende.
+                      <br />
+                      <a href="#" className="underline text-blue-500">
+                        Les mer om digitalt studentbevis.
+                      </a>
+                    </p>
+
+                    <button className="w-full bg-[#7251FA] text-white py-3 rounded-full text-lg transition-opacity duration-300">
+                      Lukk
+                    </button>
+                  </PopoverContent>
+                </Popover>
               </li>
-              <li className="border-b border-gray-300 p-2 flex items-center justify-between">
-                Personvern <PiLockLaminated size={20} />
-              </li>
+              <a href="https://sikt.no/studentbevis-pa-mobil/personvernerklaering">
+                <li className="border-b border-gray-300 p-2 flex items-center justify-between">
+                  Personvern <PiLockLaminated size={20} />
+                </li>
+              </a>
+
               <li className="border-b border-gray-300 p-2 flex items-center justify-between text-red-500">
                 Logg ut <MdLogout size={20} />
               </li>
