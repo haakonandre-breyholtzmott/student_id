@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //Next.js
 import Image from "next/image";
@@ -43,6 +43,22 @@ export default function Component() {
       setButtonOpacity(1); // Restore button opacity after 4 seconds
     }, 4000);
   };
+
+  const openFullscreen = () => {
+    const elem = document.documentElement as any;
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  };
+
+  useEffect(() => {
+    openFullscreen();
+  }, []);
 
   return (
     <div className="flex flex-col h-screen bg-white text-gray-900">
