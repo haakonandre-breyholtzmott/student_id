@@ -36,7 +36,7 @@ export default function Component() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto p-4 space-y-6">
+      <main className="flex-1 overflow-y-auto p-4 space-y-5">
         {/* Profile Section */}
         <div className="flex flex-col items-center">
           <Image
@@ -126,7 +126,7 @@ export default function Component() {
         </button>
 
         {/* Footer */}
-        <footer className="p-4 text-center text-xs text-black">
+        <footer className="flex flex-col items-center space-y-4 p-4 text-center text-xs text-black">
           <p>Sist oppdatert: {getFormattedDate()}</p>
           <p>Versjon: 4.0.3</p>
         </footer>
