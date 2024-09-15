@@ -96,7 +96,7 @@ export default function Component() {
                   <PopoverTrigger className=" flex items-center justify-between w-full">
                     Bibliotekkort <PiBarcode size={20} />
                   </PopoverTrigger>
-                  <PopoverContent className="w-[320px] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
+                  <PopoverContent className="w-[90vw] mr-4 -mt-14 rounded-xl border-[#7251FA] border-2 space-y-4">
                     <Image src={bibliotekkort} alt="Barcode" width={480} />
                     <p className="text-sm w-full text-center">
                       <span className="font-semibold">Studiested: </span>
@@ -190,7 +190,7 @@ export default function Component() {
                       height={300}
                       className=""
                     />
-                    <AlertDialogCancel className="absolute -top-4 right-6 border-none bg-transparent hover:bg-transparent">
+                    <AlertDialogCancel className="absolute -top-4 right-2 border-none bg-transparent hover:bg-transparent">
                       <IoIosCloseCircleOutline size={30} className="mb-14" />
                     </AlertDialogCancel>
                   </div>
