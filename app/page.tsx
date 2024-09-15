@@ -119,7 +119,7 @@ export default function Component() {
 
         {/* Control Button */}
         <button
-          className="w-full bg-purple-900 text-white py-3 rounded-full text-lg "
+          className="w-full bg-purple-800 text-white py-3 rounded-full text-lg "
           onClick={handleClick}
         >
           Kontroll
