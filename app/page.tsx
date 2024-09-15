@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/popover";
 
 //Icons
-import { MoreVertical, ScanBarcode, BookOpen } from "lucide-react";
+
 import { PiLockLaminated, PiBookOpenThin, PiBarcode } from "react-icons/pi";
 import { MdLogout } from "react-icons/md";
 
@@ -62,7 +62,12 @@ export default function Component() {
           <PopoverContent className="border-[#7251FA] border-2 mt-1 mr-4 max-w-44 rounded-xl px-4 py-3">
             <ul>
               <li className="border-b border-gray-300 p-2 flex items-center justify-between">
-                Bibliotekkort <PiBarcode size={20} />
+                <Popover>
+                  <PopoverTrigger className=" flex items-center justify-between w-full">
+                    Bibliotekkort <PiBarcode size={20} />
+                  </PopoverTrigger>
+                  <PopoverContent className="w-[480px]">ddd</PopoverContent>
+                </Popover>
               </li>
               <li className="border-b border-gray-300 p-2 flex items-center justify-between">
                 Vilkår <PiBookOpenThin size={20} />
