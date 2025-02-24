@@ -22,8 +22,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-import { motion } from "framer-motion";
-
 //Icons
 import {
   PiLockLaminated,
