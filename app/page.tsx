@@ -22,6 +22,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
+import { motion } from "framer-motion";
+
 //Icons
 import {
   PiLockLaminated,
@@ -29,6 +31,7 @@ import {
   PiBarcode,
   PiIdentificationCardLight,
   PiStudentLight,
+  PiQrCode,
 } from "react-icons/pi";
 import { CiCalendar } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
@@ -239,9 +242,9 @@ export default function Component() {
               }`}
             >
               <h3 className="text-xl mb-2">Gyldig studentbevis</h3>
-              <p className="text-sm">Høst 2024</p>
+              <p className="text-sm">Vår 2025</p>
               <p className="text-sm">
-                <span className="font-semibold">Utløper: </span>31.01.2025
+                <span className="font-semibold">Utløper: </span>31.08.2025
               </p>
             </div>
 
@@ -253,13 +256,47 @@ export default function Component() {
             >
               Kontroll
             </button>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <button
+                  className="w-full bg-white text-black border-2 border-[#7251FA] py-3 rounded-full text-lg transition-opacity duration-300 flex items-center justify-center"
+                  style={{ opacity: buttonOpacity }}
+                >
+                  Europeisk studentbevis <PiQrCode className="ml-2" size={20} />
+                </button>
+              </AlertDialogTrigger>
+              <AlertDialogContent
+                className="sm:max-w-[425px] w-[90vw] rounded-xl border-2 border-[#7251FA] p-4 bg-white"
+                asChild
+              >
+                <div className="rounded-xl border-2 border-[#7251FA] p-0 bg-yellow-500">
+                  <AlertDialogHeader className="p-6 pb-0">
+                    <AlertDialogTitle>Europeisk Studentbevis</AlertDialogTitle>
+                  </AlertDialogHeader>
+                  <div className="p-6">
+                    {/* Add your European student ID content here */}
+                    <p>
+                      Du har ikke samtykket til ¨bruke Europeisk studentbevis.
+                      Dersom du er programstudent på bachelor- eller masternivå
+                      og har norsk fødels
+                    </p>
+                  </div>
+                </div>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         </div>
 
         {/* Footer */}
         <footer className="flex flex-col items-center space-y-4 p-4 text-center text-xs text-black">
-          <p>Sist oppdatert: {getFormattedDate()}</p>
-          <p>Versjon: 4.0.3</p>
+          <p>
+            <span className="font-semibold">Sist oppdatert:</span>{" "}
+            {getFormattedDate()}
+          </p>
+          <p>
+            <span className="font-semibold">Tidssone:</span> Europe/Oslo
+          </p>
+          <p className="font-semibold">Versjon: 4.1.5</p>
         </footer>
       </main>
     </div>
